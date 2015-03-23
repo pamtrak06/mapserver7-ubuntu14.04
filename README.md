@@ -10,7 +10,7 @@
 
 ## Build a local image
 
-This image is built under ubuntu 14.04 with last mapserver version (currently today the 7 one !).
+This image is built under ubuntu 14.04 with last mapserver version compilation (currently today the 7 one !).
 ```
 docker build -t pamtrak06/mapserver-ubuntu14.04:latest https://raw.githubusercontent.com/pamtrak06/mapserver-ubuntu14.04/master/Dockerfile
 ```
