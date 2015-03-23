@@ -60,7 +60,7 @@ RUN mkdir /usr/local/src/mapserver/build && \
         -DWITH_GIF=1 \
         -DWITH_EXEMPI=1 \
         -DWITH_XMLMAPFILE=1 \
-    -DWITH_FCGI=0 && \
+        -DWITH_FCGI=0 && \
     make && \
     make install && \
     ldconfig
@@ -79,7 +79,7 @@ RUN sudo apt-get update
 RUN sudo apt-get install -y libapache2-mod-fastcgi php5-fpm libapache2-mod-php5 php5-common php5-cli php5-fpm php5
 
 # Enable these Apache modules
-RUN sudo a2enmod actions fastcgi alias
+RUN sudo a2enmod actions cgi fastcgi alias
 
 # Restart apache
 RUN sudo service apache2 restart
