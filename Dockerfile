@@ -82,7 +82,7 @@ RUN sudo apt-get install -y libapache2-mod-fastcgi php5-fpm libapache2-mod-php5 
 RUN sudo a2enmod actions cgi alias
 
 # Restart apache
-RUN sudo service apache2 restart
+RUN sudo service apache2 start
 
 # Apache configuration for PHP-FPM
 COPY php5-fpm.conf /etc/apache2/conf-available/
