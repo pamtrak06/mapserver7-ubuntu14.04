@@ -45,3 +45,7 @@ Test install : http://192.168.59.103:8585/cgi-bin/mapserv
 ```
 No query information to decode. QUERY_STRING is set, but empty.
 ```
+## Tutorial
+[mapserver first map tutorial in french ](https://github.com/pamtrak06/gis-howto/blob/master/fr_ateliersigcartes-mapservermiseenoeuvre.pdf)
+
+
