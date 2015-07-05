@@ -18,11 +18,11 @@ docker build -t pamtrak06/mapserver7-ubuntu14.04:latest https://raw.githubuserco
 ## Run container
 
 ```
-$ docker run -d -p 8585:80 -v /usr/local/mapserver:/maps pamtrak06/mapserver7-ubuntu14.04
+$ docker run -d -p 8585:80 -v /usr/local/mapserver/data:/data pamtrak06/mapserver7-ubuntu14.04
 ```
 
-Data are shared between host (/usr/local/mapserver) and container (/maps).
-All *.map file could be stored in /maps and data in /maps/data
+Data are shared between host (/usr/local/mapserver/data) and container (/data).
+All *.map file could be stored in /data and data in /data/maps
 
 Open a terminal session on a running container
 ```
