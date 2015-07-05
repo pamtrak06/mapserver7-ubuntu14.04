@@ -10,24 +10,24 @@
 
 ## Build a local image
 
-This image is built under ubuntu 14.04.
+This image is built under ubuntu 14.04 with last mapserver version compilation (currently today the 7 one !).
 ```
-docker build -t pamtrak06/mapserver-ubuntugis14.04:latest https://raw.githubusercontent.com/pamtrak06/mapserver-ubuntugis14.04/master/Dockerfile
+docker build -t pamtrak06/mapserver-ubuntu14.04:latest https://raw.githubusercontent.com/pamtrak06/mapserver-ubuntu14.04/master/Dockerfile
 ```
 
 ## Run container
 
 ```
-$ docker run -d -p8989:80 -v /usr/local/mapserver:/maps pamtrak06/mapserver-ubuntugis14.04
+$ docker run -d -p 8585:80 -v /usr/local/mapserver:/maps pamtrak06/mapserver-ubuntu14.04
 ```
 
 Data are shared between host (/usr/local/mapserver) and container (/maps).
-All *.map file could be stored in /maps ans data in /maps/data
+All *.map file could be stored in /maps and data in /maps/data
 
 Open a terminal session on a running container
 ```
 $ docker ps
-$ docker exec -d pamtrak06/mapserver-ubuntugis14.04 /bin/bash
+$ docker exec -d pamtrak06/mapserver-ubuntu14.04 /bin/bash
 ```
 
 Exit container without stop it
@@ -40,11 +40,8 @@ Get docker vm ip :
 $ boot2Docker ip => 192.168.59.103
 ```
 
-Test install : http://192.168.59.103:8989/cgi-bin/mapserv
+Test install : http://192.168.59.103:8585/cgi-bin/mapserv
 
 ```
 No query information to decode. QUERY_STRING is set, but empty.
 ```
-
-## Configure container
-
