@@ -3,7 +3,7 @@ FROM pamtrak06/ubuntu14.04-apache2-python
 MAINTAINER pamtrak06 <pamtrak06@gmail.com>
 
 # Install mapcache compilation prerequisites
-RUN apt-get install -y software-properties-common g++ make cmake wget git
+RUN apt-get update && apt-get install -y software-properties-common g++ make cmake wget git
 
 # Install mapcache dependencies provided by Ubuntu repositories
 RUN apt-get install -y \
@@ -67,16 +67,15 @@ RUN mkdir /usr/local/src/mapserver/build && \
 
 
 # Install the Apache Worker MPM (Multi-Procesing Modules)
-RUN sudo apt-get install apache2-mpm-worker
+RUN apt-get update && apt-get install -y apache2-mpm-worker
 
 # To reconcile this, the multiverse repository must be added to the apt sources.
-RUN echo 'deb http://archive.ubuntu.com/ubuntu utopic multiverse' >> /etc/apt/sources.list
-RUN echo 'deb http://archive.ubuntu.com/ubuntu utopic-updates multiverse' >> /etc/apt/sources.list
-RUN echo 'deb http://archive.ubuntu.com/ubuntu utopic-security multiverse' >> /etc/apt/sources.list
-RUN sudo apt-get update
+RUN echo 'deb http://security.ubuntu.com/ubuntu trusty multiverse' >> /etc/apt/sources.list
+RUN echo 'deb http://security.ubuntu.com/ubuntu trusty-updates multiverse' >> /etc/apt/sources.list
+RUN echo 'deb http://security.ubuntu.com/ubuntu trusty-security multiverse' >> /etc/apt/sources.list
 
 # Install PHP5 and necessary modules
-RUN sudo apt-get install -y libapache2-mod-fastcgi php5-fpm libapache2-mod-php5 php5-common php5-cli php5-fpm php5
+RUN apt-get update && apt-get install -y libapache2-mod-fastcgi php5-fpm libapache2-mod-php5 php5-common php5-cli php5-fpm php5
 
 # Enable these Apache modules
 RUN sudo a2enmod actions cgi alias
