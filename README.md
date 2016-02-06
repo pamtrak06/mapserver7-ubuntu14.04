@@ -37,10 +37,16 @@ CTRL+P  &  CTRL+Q
 
 Get docker vm ip : 
 ```
-$ boot2Docker ip => 192.168.59.103
+$ docker-machine env default
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.101:2376"
+export DOCKER_CERT_PATH="/Users/jp/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
+# Run this command to configure your shell: 
+# eval "$(docker-machine env default)"
 ```
 
-Test install : http://192.168.59.103:8585/cgi-bin/mapserv
+Test install : http://192.168.99.101:8585/cgi-bin/mapserv
 
 ```
 No query information to decode. QUERY_STRING is set, but empty.
