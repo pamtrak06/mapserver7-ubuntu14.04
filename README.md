@@ -35,7 +35,7 @@ Exit container without stop it
 CTRL+P  &  CTRL+Q
 ```
 
-Get docker vm ip : 
+Get docker vm ip frm windows or mac : 
 ```
 $ docker-machine env default
 export DOCKER_TLS_VERIFY="1"
@@ -46,7 +46,9 @@ export DOCKER_MACHINE_NAME="default"
 # eval "$(docker-machine env default)"
 ```
 
-Test install : http://192.168.99.101:8585/cgi-bin/mapserv
+Test win/mac install  : http://192.168.99.101:8989/cgi-bin/mapserv
+
+Test lin install      : http://<host ip>:8989/cgi-bin/mapserv
 
 ```
 No query information to decode. QUERY_STRING is set, but empty.
