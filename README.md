@@ -20,7 +20,7 @@ $ docker build -t pamtrak06/mapserver7-ubuntu14.04:latest .
 ## Run container
 
 ```
-$ docker run -d -p 8585:80 -v /usr/local/mapserver/data:/data pamtrak06/mapserver7-ubuntu14.04
+$ docker run -d -p 8585:80 -v <your local path to mapserver data>/data:/data pamtrak06/mapserver7-ubuntu14.04
 ```
 
 Data are shared between host (/usr/local/mapserver/data) and container (/data).
