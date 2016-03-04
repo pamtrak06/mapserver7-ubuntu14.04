@@ -58,4 +58,8 @@ No query information to decode. QUERY_STRING is set, but empty.
 ## Tutorial
 [mapserver first map tutorial in french ](https://github.com/pamtrak06/gis-howto/blob/master/fr_ateliersigcartes-mapservermiseenoeuvre.pdf)
 
+## Docker utility
+
+For easy use of docker command, try [edocker](https://github.com/pamtrak06/edocker).
+Create your edocker.cfg configuration file (parameters for most used docker commands ) and then use edocker<command> in any docker working project container those configuration file !
 
